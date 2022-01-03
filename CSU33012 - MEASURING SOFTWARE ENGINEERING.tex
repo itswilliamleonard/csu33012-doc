@@ -1,8 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper, margin=3cm]{geometry}
 \usepackage{lettrine}
-\usepackage[T1]{fontenc}
-\usepackage{tgschola}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\renewcommand{\baselinestretch}{1.5}
 \pagenumbering{gobble}
 
 \newcommand{\parbreak}{\bigskip\par\centerline{*\,*\,*}\medskip\par}
@@ -40,15 +41,25 @@
 	
 	To understand the effectiveness of a new software engineering metric, researchers must test them on datasets of software projects. Thankfully, modern analysts have access to far more open and large datasets than were available 40 years ago. Today, millions of code repositories are stored online through services such as GitHub, easily accessible through their APIs. The practice of analysing open repositories has become so common that an annual \textit{Mining Software Repositories} conference has been hosted since 2004 \cite{msr}. (Dozens of papers are presented each year, reporting brand-new analysis methods and their results.) This movement has also opened up the doors to new areas in software development where data can be gathered---for instance, the issue-tracker sections of GitHub repositories---and new computing platforms to handle and process this data.
 	
-	One major case study is Pluralsight's \textit{Flow} service \cite{flow}, which offers an advanced all-in-one software engineering analysis platform. Users can easily visualise the history and status of their Git projects, the contributions of its members, and a broad insight into the project's performance and any potential shortcomings. Flow goes deeper still in analysing the team members themselves, and the dynamics between them---how well they contribute, how often they communicate together, and the relationship between senior engineers and the developers they mentor. It bills itself as a comprehensive solution to the task of `measuring software engineering', built on modern and sophisticated analysis tools.
+	One major case study is Pluralsight's \textit{Flow} service \cite{flow}, which offers an advanced all-in-one software engineering analysis platform. Users can easily visualise the history and status of their Git projects, the contributions of its members, and a broad insight into the project's performance and any potential shortcomings. Flow goes deeper still in analysing the team members themselves, and the dynamics between them---how well they contribute, how often they communicate together, and the relationship between senior engineers and the developers they mentor. It bills itself as a comprehensive solution to the task of `measuring software engineering', built on modern and sophisticated analysis tools. But it is also one of many such platforms; others include GitLab (which builds insights onto their online repository hosting) and Harness (which makes use of AI to monitor software projects).
+	
+	These tools and methodologies have seen widespread adoption in software engineering, from startups to Big Tech. Flow alone boasts clients from Google Cloud to Amazon Web Services to even GitHub itself. On an even larger scale, Microsoft now collects telemetry on developers at the company (using tools built into Windows) to ``guide product and organizational decisions" \cite{windows}. It is clear that the future of `measuring' software engineering lies here: large computation platforms hosted by dedicated firms; collecting data from projects rather than imposing data upon them; insights rather than models; solutions as fast and adaptive as the teams that need them.
 	
 	\parbreak
 	
-	Analysing a software engineering project necessarily boils down to analysing the \textit{people} behind it---and this raises all of the usual ethical questions and privacy issues involved. First, in testing and mining: hosts of online code repositories may not consent to be studied in datasets, or may wish to be anonymised---and GDPR compliance must be enforced throughout by research\-ers in the field.
+	Analysing a software engineering project necessarily boils down to analysing the \textit{people} behind it---and this raises all of the usual ethical questions and privacy issues involved. First, in testing and mining: hosts of online code repositories may not consent to be studied in datasets, or may wish to be anonymised---and GDPR compliance must be enforced throughout by research\-ers in the field. ***
 	
-	A more unnerving problem rears its head, however, when putting this analysis into real-world practice. What of the software engineers themselves? How much analytical oversight and productivity reports can be imposed upon a development team, before what starts as helpful aid transforms into needless micromanagement... or a force more totalitarian still?
+	A greyer problem rears its head, however, when putting this analysis into real-world practice. What of the software engineers themselves? How much analytical oversight, productivity reports, and constant data collection can be imposed upon a development team, before what starts as useful aid transforms into needless micromanagement... or a force more totalitarian still?
 	
-	This is the nexus at which modern software development clashes with modern software business. It is striking how the evolving techniques in this field over the decades have tracked so closely with our growing hunger for data, and with the changing of power throughout computer science. The architects of the first software engineering productivity tests were themselves software engineers, often working in government---the `function point' system was developed by IBM technical staff \cite{stutzke}, and much of our understanding of how to \textit{manage} software development originated with the complicated projects of the US Military in the 1970s \cite{rand}. With the consolidation of power in 21st-century Silicon Valley, a different mindset has entered the picture; this one rooted in a more corporate mentality. 
+	This is the nexus at which modern software development risks clashing with modern software business. It is striking how the evolving techniques in this field over the decades have tracked so closely with our growing hunger for data, and with the shifting of power throughout computer science. The architects of the first software engineering productivity tests were themselves software engineers, often working in government---the `function point' system was developed by IBM technical staff \cite{stutzke}, and much of our understanding of how to \textit{manage} software development originated with the complicated projects of the US Military in the 1970s \cite{rand}. With power now largely consolidated in 21st-century Silicon Valley, a different mindset has entered the picture; this one rooted in the data industry that has risen around it.
+	
+	The practice of gathering data by simply instrumenting the environment, pioneered in software development by tools like Hackystat \cite{telemetry}, is now overwhelmingly commonplace in all sectors of the tech industry. ***
+	
+	This report cannot conclude that this shift is fundamentally `evil', however. In some ways, it is a necessary one. Software development projects have only grown more complex through the decades---with agile development now the norm-to-be, the old models simply don't suffice for keeping track of everything; and the sheer number of software teams at all levels adopting modern platforms shows that these quite likely \textit{do}. The champions of autonomous data-driven metric-collecting will argue that this shift is natural and common-sense; technology has gotten so \textit{good} at handling data anyway, and we can make use of this power to enrich the development process with instant, superhuman insight. Computers can already simplify so many aspects of our lives---let's make them simplify ours \textit{back}!
+	
+	\parbreak
+	
+	Ultimately, the tech industry itself must decide how to treat its employees. 
 	
 	\begin{center}
 		\hrulefill
@@ -73,6 +84,9 @@
 		
 		\bibitem{flow}
 		\texttt{https://www.pluralsight.com/product/flow}
+		
+		\bibitem{windows}
+		Buja, S., Zimmermann, T., Kirsanov, P., Tandon, A., Liu, X., Windsor, J., Addis, H. (2019). \textit{Understanding software developer activity via Windows 10 telemetry}. Microsoft.
 		
 		\bibitem{rand}
 		Ware, W. H., Patrick, R. L. (1983). \textit{Perspectives on oversight management of software development projects.} Rand Corporation.\\\texttt{https://www.rand.org/pubs/notes/N2027.html}
